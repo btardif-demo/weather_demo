@@ -1,0 +1,267 @@
+/* Command bar - pinned to top */
+.command-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4em;
+  line-height: 1;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.command-bar-title {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: auto;
+}
+
+.bar-emoji {
+  height: 2rem;
+  width: 2rem;
+}
+
+.bar-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+.header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.header-emoji {
+  height: 5rem;
+  width: 5rem;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header h1 {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+  text-align: right;
+}
+
+.zip-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.zip-form input {
+  padding: 0.5em 0.8em;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  width: 120px;
+  text-align: center;
+}
+
+.zip-form input::placeholder {
+  color: var(--nord4);
+  opacity: 1;
+}
+
+.zip-form button {
+  background-color: var(--aurora-purple);
+  color: var(--nord6);
+  border-color: var(--aurora-purple);
+  font-size: 0.9rem;
+  padding: 0.5em 1em;
+}
+
+.zip-form button:hover {
+  background-color: var(--aurora-red);
+  border-color: var(--aurora-red);
+}
+
+.error {
+  color: var(--aurora-red);
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+@media (orientation: portrait) {
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+  .subtitle {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+  .command-bar-title {
+    display: flex;
+  }
+  .header-emoji {
+    height: 2rem;
+    width: 2rem;
+  }
+  .header h1 {
+    font-size: 1.6em;
+  }
+}
+
+.day-card {
+  border-radius: 12px;
+  padding: 0.8rem;
+  border: 2px solid var(--border);
+  background: transparent;
+  text-align: left;
+  overflow: hidden;
+}
+
+.day-card.good {
+  border-color: var(--aurora-green);
+  box-shadow: 0 4px 12px rgba(163, 190, 140, 0.3);
+}
+
+.day-card.bad {
+  border-color: var(--aurora-red);
+  box-shadow: 0 4px 12px rgba(191, 97, 106, 0.3);
+}
+
+.day-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: var(--aurora-purple);
+}
+
+.verdict {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.verdict.good { color: var(--aurora-green); }
+.verdict.bad { color: var(--aurora-red); }
+
+.checks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.checks li {
+  margin: 0.3rem 0;
+}
+
+.checks li.pass { color: var(--aurora-green); }
+.checks li.fail { color: var(--aurora-orange); }
+
+/* Welcome / empty state */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.welcome-prompt {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.welcome-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.welcome-form input {
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text);
+  width: 10rem;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+
+.welcome-form button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--aurora-purple);
+  color: var(--nord6);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.welcome-form button:hover {
+  opacity: 0.9;
+}
+
+.welcome-hints {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.welcome-hints li::before {
+  content: '→ ';
+  color: var(--aurora-green);
+}
+
+.welcome-hints code {
+  background: var(--bg-elevated);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+

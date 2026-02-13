@@ -1,0 +1,81 @@
+:root {
+  /* Nord Polar Night */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  /* Nord Snow Storm */
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  /* Nord Aurora */
+  --aurora-red: #bf616a;
+  --aurora-orange: #d08770;
+  --aurora-yellow: #ebcb8b;
+  --aurora-green: #a3be8c;
+  --aurora-purple: #b48ead;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  --bg: var(--nord0);
+  --bg-surface: var(--nord1);
+  --bg-elevated: var(--nord2);
+  --text: var(--nord5);
+  --text-muted: var(--nord4);
+  --border: var(--nord3);
+  --shadow: rgba(180, 142, 173, 0.5);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: var(--nord6);
+  --bg-surface: var(--nord5);
+  --bg-elevated: #fff;
+  --text: var(--nord0);
+  --text-muted: var(--nord2);
+  --border: var(--nord4);
+  --shadow: rgba(46, 52, 64, 0.3);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--aurora-purple);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--bg-surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+button:hover {
+  border-color: var(--aurora-purple);
+  background-color: var(--bg-elevated);
+}
