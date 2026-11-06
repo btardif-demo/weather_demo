@@ -1,0 +1,6 @@
+components:
+- name: app
+  role: static
+  platform: nodejs
+  output: dist
+  path: /
